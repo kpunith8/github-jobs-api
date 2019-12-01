@@ -11,6 +11,11 @@ const baseURL = "https://jobs.github.com/positions.json";
 
 async function fetchGithubJobs() {
   let resultCount = 1;
+  // Jobs can be fetched from UI with pagination
+  // here we are fetching all the jobs and storing to redis
+  // so that app loading will be faste.
+  // This is not the right way to do, with redis and
+  // amount of data, it's fine
   let page = 1;
   let allJobs = [];
 
@@ -45,7 +50,8 @@ async function fetchGithubJobs() {
   console.log({ success });
 }
 
-// Keep this one for testing to execute this file separately
-fetchGithubJobs();
+// Uncomment the below line, only if you want to run this file separately to test
+// whether it is fetching the data properly
+// fetchGithubJobs();
 
 module.exports = fetchGithubJobs;

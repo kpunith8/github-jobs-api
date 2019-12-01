@@ -13,9 +13,9 @@ async function fetchGithubJobs() {
   let resultCount = 1;
   // Jobs can be fetched from UI with pagination
   // here we are fetching all the jobs and storing to redis
-  // so that app loading will be faste.
+  // so that app loading will be faster.
   // This is not the right way to do, with redis and
-  // amount of data, it's fine
+  // amount of data we are handling, it's fine
   let page = 1;
   let allJobs = [];
 
